@@ -8,7 +8,6 @@ import { FormComponent } from '../../shared/molecules/form/form.component';
   standalone: true,
   imports: [RouterLink, FormComponent],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
   formType: 'login' | 'signup' = 'signup';
