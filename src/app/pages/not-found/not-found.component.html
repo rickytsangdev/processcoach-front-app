@@ -1,13 +1,13 @@
-<div class="min-h-screen flex items-center justify-center">
-  <div class="404_image flex flex-col items-center text-center space-y-4">
-    <h1 class="text-4xl font-bold">{{ error() }}</h1>
-    <div>
-      <img [src]="not_found_img" alt="404 image" class="max-w-full h-auto" />
-    </div>
-    <p class="text-lg">Oups la page que vous demandez n'existe pas.</p>
-    <p class="text-lg">
-      Pas de soucis, les formations sont
-      <a routerLink="/products" class="text-blue-500 underline">ici</a>
-    </p>
+<div
+  class="flex flex-col items-center justify-center min-h-screen text-center px-4"
+>
+  <div class="404_image mb-4">
+    <h1 class="text-4xl font-bold mb-2">{{ error() }}</h1>
+    <img [src]="not_found_img" class="max-w-full h-auto" />
   </div>
+  <p class="text-lg mb-4">Oups la que vous demandez n'existe pas.</p>
+  <p class="text-base">
+    Pas de soucis, les formations sont
+    <a routerLink="/products" class="text-blue-500 underline">ici</a>
+  </p>
 </div>
