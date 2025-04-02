@@ -1,1 +1,24 @@
-<p>products works!</p>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-center mb-8">Nos Formations</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div
+      *ngFor="let product of products"
+      class="card border-solid border-2 rounded-md"
+      style="border-color: #00a778"
+    >
+      <div
+        class="card-body bg-white rounded-md flex flex-col items-center text-center"
+      >
+        <h2 class="card-title mb-2">{{ product.title }}</h2>
+        <h3 class="text-md text-gray-600 mb-2">{{ product.subtitle }}</h3>
+        <figure>
+          <img src="{{ product.image }}" alt="{{ product.title }}" />
+        </figure>
+        <p class="text-sm text-gray-700 mb-4">{{ product.description }}</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">{{ product.buttonText }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
