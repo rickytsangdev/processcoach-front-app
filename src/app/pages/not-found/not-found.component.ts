@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.scss'
 })
 export class NotFoundComponent {
-
+  not_found_img: string = '../../../assets/rocket-not-found.png';
+  error = signal('404 Page Not Found');
 }

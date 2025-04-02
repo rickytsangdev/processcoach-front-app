@@ -1,1 +1,13 @@
-<p>not-found works!</p>
+<div class="min-h-screen flex items-center justify-center">
+  <div class="404_image flex flex-col items-center text-center space-y-4">
+    <h1 class="text-4xl font-bold">{{ error() }}</h1>
+    <div>
+      <img [src]="not_found_img" alt="404 image" class="max-w-full h-auto" />
+    </div>
+    <p class="text-lg">Oups la page que vous demandez n'existe pas.</p>
+    <p class="text-lg">
+      Pas de soucis, les formations sont
+      <a routerLink="/products" class="text-blue-500 underline">ici</a>
+    </p>
+  </div>
+</div>
