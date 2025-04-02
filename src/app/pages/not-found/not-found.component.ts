@@ -8,6 +8,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './not-found.component.html',
 })
 export class NotFoundComponent {
-  not_found_img: string = '../../../assets/rocket-not-found.png';
+
   error = signal('404 Page Not Found');
+
+  image404 = signal("assets/rocket-not-found.png")
+
+  getName(){
+    return this.error().toUpperCase();
+  }
 }
