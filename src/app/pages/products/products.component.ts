@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './products.component.html',
 })
 export class ProductsComponent {
-  products = [
+  products  = [
     {
       title: 'Atelier de gestion du temps',
       subtitle: 'Apprenez à mieux gérer votre temps',

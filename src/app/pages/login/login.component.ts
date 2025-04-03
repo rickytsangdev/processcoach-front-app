@@ -9,4 +9,6 @@ import { UpperCasePipe } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  title: string = 'Process Coach';
+}
