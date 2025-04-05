@@ -1,118 +1,118 @@
 <!-- Start of hero section -->
 <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content flex-col lg:flex-row-reverse gap-20">
-      <img
-        [src]="welcomePage"
-        alt="teleworking with students"
-        class="max-w-[500px] rounded-lg shadow-2xl"
-      />
-      <div>
-        <h1 class="text-5xl font-bold">
-          Accéder à la plateforme Process Training !
-        </h1>
-        <p class="py-6">
-          Simple, flexible et 100% en ligne, Process Coach a développé Process
-          Training ! <br />
-          C’est votre outils de formation contenant tout ce qu’il vous faut pour
-          votre apprentissage.
+  <div class="hero-content flex-col lg:flex-row-reverse gap-20">
+    <img
+      [src]="welcomePage"
+      alt="teleworking with students"
+      class="max-w-[500px] rounded-lg shadow-2xl"
+    />
+    <div>
+      <h1 class="text-5xl font-bold">
+        Accéder à la plateforme Process Training !
+      </h1>
+      <p class="py-6">
+        Simple, flexible et 100% en ligne, Process Coach a développé Process
+        Training ! <br />
+        C’est votre outils de formation contenant tout ce qu’il vous faut pour
+        votre apprentissage.
+      </p>
+      <button routerLink="/signup" class="btn btn-primary">
+        Commencer ma formation
+      </button>
+    </div>
+  </div>
+</div>
+<!--End of hero section -->
+
+<!-- Start of Features Section -->
+<!-- CAN CREATE A COMPONENT HERE  -->
+<section>
+  <h2 class="text-4xl font-semibold text-center pt-8">
+    Se Former, Se Développer, Process Coach.
+  </h2>
+  <div class="flex justify-around">
+    <!-- {/* engagement 1 */} -->
+    <div class="flex flex-col justify-center align-center w-1/4">
+      <div class="flex justify-center">
+        <img
+          class="max-w-full h-auto"
+          [src]="badgeCertification"
+          alt="label-certification"
+        />
+      </div>
+      <div class="flex justify-center">
+        <p class="text-center">
+          Une formation pour l'éternité. De haute qualité jusque dans les
+          moindres détails.
         </p>
-        <button routerLink="/signup" class="btn btn-primary">
-          Commencer ma formation
-        </button>
+      </div>
+    </div>
+    <!-- {/* engagement 2 */} -->
+    <div class="flex flex-col justify-around align-center w-1/4 pt-4 gap-8">
+      <div class="flex justify-center">
+        <img
+          class="max-w-full h-auto"
+          [src]="badgeChecklist"
+          alt="label-certification"
+        />
+      </div>
+      <div class="flex justify-center">
+        <p class="text-center">
+          Des exercices, des conseils et un suivi personnalisé pour atteindre
+          tes objectifs.
+        </p>
+      </div>
+    </div>
+    <!-- {/* engagement 3 */} -->
+    <div class="flex flex-col justify-center align-center w-1/4">
+      <div class="flex justify-center">
+        <img
+          class="max-w-full h-auto"
+          [src]="badgePc"
+          alt="label-certification"
+        />
+      </div>
+      <div class="flex justify-center">
+        <p class="text-center">
+          Accéder à à la formation 100% en ligne à la maison, en ville, à la
+          montagne ... N’importe ou ! N’importe quand !
+        </p>
       </div>
     </div>
   </div>
-  <!--End of hero section -->
-  
-  <!-- Start of Features Section -->
-  <!-- CAN CREATE A COMPONENT HERE  -->
-  <section>
-    <h2 class="text-4xl font-semibold text-center pt-8">
-      Se Former, Se Développer, Process Coach.
-    </h2>
-    <div class="flex justify-around">
-      <!-- {/* engagement 1 */} -->
-      <div class="flex flex-col justify-center align-center w-1/4">
-        <div class="flex justify-center">
-          <img
-            class="max-w-full h-auto"
-            [src]="badgeCertification"
-            alt="label-certification"
-          />
-        </div>
-        <div class="flex justify-center">
-          <p class="text-center">
-            Une formation pour l'éternité. De haute qualité jusque dans les
-            moindres détails.
-          </p>
-        </div>
+</section>
+
+<!--End of Features Section -->
+
+<!-- Start of about training process coach section -->
+<section class="flex justify-center">
+  <div class="flex flex-col align-items justify-center">
+    <p class="bg-green-gradient h-96 flex flex-col items-center justify-center text-white text-xl font-bold gap-10">
+      La plateforme Process Coach : L’apprentissage tout en 1
+    </p>
+    <div class="flex gap-12">
+      <!-- CAN CREATE COMPONENT HERE -->
+      <div>
+        <p class="text-xxl">1</p>
+        <p>Préparation</p>
       </div>
-      <!-- {/* engagement 2 */} -->
-      <div class="flex flex-col justify-around align-center w-1/4 pt-4 gap-8">
-        <div class="flex justify-center">
-          <img
-            class="max-w-full h-auto"
-            [src]="badgeChecklist"
-            alt="label-certification"
-          />
-        </div>
-        <div class="flex justify-center">
-          <p class="text-center">
-            Des exercices, des conseils et un suivi personnalisé pour atteindre
-            tes objectifs.
-          </p>
-        </div>
+      <div>
+        <p class="text-2xl">2</p>
+        <p>Formation</p>
       </div>
-      <!-- {/* engagement 3 */} -->
-      <div class="flex flex-col justify-center align-center w-1/4">
-        <div class="flex justify-center">
-          <img
-            class="max-w-full h-auto"
-            src="badgePc.png"
-            alt="label-certification"
-          />
-        </div>
-        <div class="flex justify-center">
-          <p class="text-center">
-            Accéder à à la formation 100% en ligne à la maison, en ville, à la
-            montagne ... N’importe ou ! N’importe quand !
-          </p>
-        </div>
+      <div>
+        <p class="text-2xl">3</p>
+        <p>Evaluations</p>
+      </div>
+      <div>
+        <p class="text-2xl">4</p>
+        <p>Suivi</p>
       </div>
     </div>
-  </section>
-  
-  <!--End of Features Section -->
-  
-  <!-- Start of about training process coach section -->
-  <section class="flex justify-center">
-    <div class="flex flex-col align-items justify-center">
-      <p class="text-4xl font-semibold">
-        La plateforme Process Coach : L’apprentissage tout en 1
-      </p>
-      <div class="flex gap-12">
-        <!-- CAN CREATE COMPONENT HERE -->
-        <div>
-          <p class="text-xxl">1</p>
-          <p>Préparation</p>
-        </div>
-        <div>
-          <p class="text-2xl">2</p>
-          <p>Formation</p>
-        </div>
-        <div>
-          <p class="text-2xl">3</p>
-          <p>Evaluations</p>
-        </div>
-        <div>
-          <p class="text-2xl">4</p>
-          <p>Suivi</p>
-        </div>
-      </div>
-      <div class="w-[280px]">
-        <!-- add button call to action here -->
-      </div>
+    <div class="w-[280px]">
+      <!-- add button call to action here -->
     </div>
-  </section>
-  
-  <!-- End of about training process coach section -->
+  </div>
+</section>
+
+<!-- End of about training process coach section -->

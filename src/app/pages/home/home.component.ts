@@ -12,4 +12,5 @@ export class HomeComponent {
   welcomePage: string = './assets/welcomePage.png';
   badgeCertification: string = './assets/badgeCertifcation.png';
   badgeChecklist: string = './assets/badgeChecklist.png';
+  badgePc: string = './assets/badgePc.png';
 }
