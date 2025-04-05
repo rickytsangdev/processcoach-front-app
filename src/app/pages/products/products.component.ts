@@ -1,5 +1,7 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SearchBarComponent } from "../../shared/molecules/search-bar/search-bar.component";
+import { ButtonComponent } from '../../shared/atoms/button/button.component';
 
 @Component({
   selector: 'app-products',

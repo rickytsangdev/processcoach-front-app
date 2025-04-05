@@ -4,12 +4,14 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LibraryComponent } from './pages/library/library.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'library', component: LibraryComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
