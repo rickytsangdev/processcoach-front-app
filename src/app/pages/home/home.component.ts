@@ -10,5 +10,6 @@ import { NavbarComponent } from "../../shared/organisms /navbar/navbar.component
 })
 export class HomeComponent {
   welcomePage: string = './assets/welcomePage.png';
+  badgeCertification:string = './assets/badgeCertifcation.png'
 
 }
