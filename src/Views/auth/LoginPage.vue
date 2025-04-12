@@ -5,4 +5,7 @@ export default {
   },
 }
 </script>
-<template>i'm the login page</template>
+<template>
+  <h1>Espace Formation Process Coach</h1>
+  <h2>Rejoignez-nous maintenant !</h2>
+</template>
