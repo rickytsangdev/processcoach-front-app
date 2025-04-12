@@ -1,0 +1,83 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "title": "Développement Web Moderne",
+        "slug": "developpement-web-moderne",
+        "coverImage": "web-dev.jpg",
+        "description": "Maîtrisez les dernières technologies frontend et backend pour créer des applications performantes.",
+        "category": "Développement",
+        "duration": 90,
+        "level": "Intermediaire",
+        "instructor": "Sarah Johnson",
+        "lessons": [
+          {
+            "id": 101,
+            "title": "Introduction à Vue.js 3",
+            "slug": "introduction-vuejs-3",
+            "videoUrl": "vuejs-intro.mp4",
+            "duration": 25,
+            "description": "Découvrez les bases de la composition API et les nouveautés de Vue 3."
+          },
+          {
+            "id": 102,
+            "title": "State Management avec Pinia",
+            "slug": "state-management-pinia",
+            "videoUrl": "pinia-state.mp4",
+            "duration": 35,
+            "description": "Implémentez un store global pour votre application."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Machine Learning Pratique",
+        "slug": "machine-learning-pratique",
+        "coverImage": "ml-cover.jpg",
+        "description": "Apprenez à implémenter des modèles de ML avec Python et TensorFlow.",
+        "category": "Data Science",
+        "duration": 120,
+        "level": "Avancé",
+        "instructor": "Dr. Alan Turing",
+        "lessons": [
+          {
+            "id": 201,
+            "title": "Préparation des Données",
+            "slug": "preparation-donnees",
+            "videoUrl": "data-cleaning.mp4",
+            "duration": 45,
+            "description": "Techniques de nettoyage et normalisation des datasets."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "UX/UI Design Avancé",
+        "slug": "ux-ui-design-avance",
+        "coverImage": "design-cover.jpg",
+        "description": "Créez des interfaces utilisateur intuitives avec Figma et Adobe XD.",
+        "category": "Design",
+        "duration": 60,
+        "level": "Débutant",
+        "instructor": "Emma Davis",
+        "lessons": [
+          {
+            "id": 301,
+            "title": "Principes de Gestalt",
+            "slug": "principes-gestalt",
+            "videoUrl": "gestalt-principles.mp4",
+            "duration": 20,
+            "description": "Appliquez les lois psychologiques de la perception visuelle."
+          },
+          {
+            "id": 302,
+            "title": "Prototypage Animé",
+            "slug": "prototypage-anime",
+            "videoUrl": "figma-animations.mp4",
+            "duration": 40,
+            "description": "Créez des micro-interactions pour améliorer l'expérience utilisateur."
+          }
+        ]
+      }
+    ]
+  }
