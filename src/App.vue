@@ -13,6 +13,10 @@ export default {
 
 <template>
   <Header></Header>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+
 <div class="container">
     <Router-view/>
   </div>
