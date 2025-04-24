@@ -1,19 +1,12 @@
-<script>
-export default {
-  data() {
-    return {
-      action: 'Accéder à la formation',
-    }
-  },
-}
-</script>
+<script setup></script>
 
 <template>
   <!-- Section Main Image  -->
   <div class="main_image">
     <img src="../assets/formation.jpg" alt="Formation" />
     <div class="text_bloc">
-      <h1>Accéder à la formation</h1>
+      <h1>I AM THE HOME PAGE</h1>
+      <h2>Accéder à la formation</h2>
       <p>
         Simple, flexible et 100% en ligne, Process Coach s'est votre outils de formation contenant
         tout ce qu'il vous faut pour votre apprentissage.

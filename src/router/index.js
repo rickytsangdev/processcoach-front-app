@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// import page here
-import HomePage from '@/Views/HomePage.vue'
-import CataloguePage from '@/Views/CataloguePage.vue'
-import LoginPage from '@/Views/auth/LoginPage.vue'
-import RegisterPage from '@/Views/auth/RegisterPage.vue'
+// import Component View here
+import HomeView from '@/Views/HomeView.vue'
+import CatalogueView from '@/Views/CatalogueView.vue'
+import LoginView from '@/Views/auth/LoginView.vue'
+import SignupView from '@/Views/auth/SignupView.vue'
+import DashboardView from '@/Views/user/DashboardView.vue'
+import ProfileView from '@/Views/user/ProfileView.vue'
+import NotFoundView from '@/Views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,23 +15,34 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomePage,
+      component: HomeView,
     },
     {
       path: '/catalogue',
       name: 'Catalogue',
-      component: CataloguePage,
+      component: CatalogueView,
     },
     {
       path: '/login',
       name: 'Login',
-      component: LoginPage
+      component: LoginView,
     },
     {
       path: '/signup',
       name: 'Signup',
-      component: RegisterPage,
+      component: SignupView,
     },
+    {
+      path: '/user/dashboard',
+      name: 'Dashboard-user',
+      component: DashboardView,
+    },
+    {
+      path: '/user/profile',
+      name: 'Profile-user',
+      component: ProfileView,
+    },
+    { path: '/:catchAll(.*)', name: 'not-found', component: NotFoundView },
   ],
 })
 

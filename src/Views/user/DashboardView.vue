@@ -1,0 +1,11 @@
+<script setup></script>
+
+<template>
+  <h1>Hello, I'm the DASHBOARD USER View</h1>
+  <p>
+    Here I can controle all my courses that I purchased, and I can also look at my progression UI as
+    a student, I acceed of a specific course HERE ! 
+  </p>
+</template>
+
+<style scoped></style>
