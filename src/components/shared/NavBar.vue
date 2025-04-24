@@ -1,8 +1,4 @@
-<script>
-export default {
-  name: 'Header',
-}
-</script>
+<script setup></script>
 
 <template>
   <!-- Header section -->
@@ -17,8 +13,6 @@ export default {
       <RouterLink to="/signup">Commencer </RouterLink>
     </div>
   </div>
-
-
 </template>
 
 <style scoped>

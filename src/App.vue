@@ -1,18 +1,11 @@
-<script>
+<script setup>
   import { RouterLink, RouterView } from 'vue-router'
-  import Header from './components/core/Header.vue'
+  import NavBar from './components/shared/NavBar.vue';
 
-  
-export default {
-  components : {
-    Header,
-
-  },
-}
 </script>
 
 <template>
-  <Header></Header>
+  <NavBar/>
   <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
