@@ -1,3 +1,7 @@
+/* import prime icon */
+@import 'primeicons/primeicons.css';
+
+/* import tailwindCSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
