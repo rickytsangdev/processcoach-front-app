@@ -1,13 +1,15 @@
-<div
-  class="flex flex-col items-center justify-center min-h-screen text-center px-4"
->
-  <div class="404_image mb-4">
-    <h1 class="text-4xl font-bold mb-2 text-green-500">{{ getName() }}</h1>
-    <img [src]="image404()" class="max-w-full h-auto" />
-  </div>
-  <p class="text-lg mb-4">Oups la que vous demandez n'existe pas.</p>
-  <p class="text-base">
-    Pas de soucis, les formations sont
-    <a routerLink="/products" class="text-blue-500 underline">ici</a>
+<section class="text-center flex flex-col justify-center items-center h-96">
+  <i class="pi pi-exclamation-triangle text-yellow-500 text-7xl"></i>
+  <h1 class="text-6xl font-bold mb-4 text-green-500">404 Page Not Found</h1>
+  <p class="text-xl mb-5">
+    Oups la page que vous demandez n'existe pas. <br />
+
+    vous pouvez toujours retourner à la page d'accueil ou explorer nos
+    formations.
   </p>
-</div>
+  <a
+    routerLink="/products"
+    class="text-white bg-green-700 hover:bg-green-900 rounded-md px-3 py-2 mt-4"
+    >Retour</a
+  >
+</section>
