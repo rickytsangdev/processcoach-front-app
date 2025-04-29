@@ -28,6 +28,14 @@
       </svg>
       <input type="text" class="grow" placeholder="Email" formControlName="email" />
     </label>
+    <p *ngIf="formGroup.controls['email'].errors?.['required']">L'email est requis.</p>
+    <p *ngIf="formGroup.controls['email'].errors?.['minlength']">L'email doit avoir au moins 3 caractères.</p>
+
+
+    @if (formGroup.controls['email'].hasError('mingLenth')) {
+      L'email doit contenir au moins {{ formGroup.controls['email'].errors?.['minlength']?.requiredLength }} caractères.
+
+    }
   </div>
   <div class="w-[70%] m-auto">
     <label class="input input-bordered flex items-center gap-2">
@@ -45,6 +53,8 @@
       </svg>
       <input type="password" class="grow" value="password" formControlName="password"  />
     </label>
+    <p *ngIf="formGroup.controls['password'].errors?.['required']">Le mot de passe est requis.</p>
+
   </div>
   <ng-container *ngIf="formType === 'signup'">
     <div class="w-[70%] m-auto">
@@ -52,12 +62,16 @@
         Nom :
         <input type="text" class="grow" placeholder="Doe"  formControlName="lastName" />
       </label>
+      <p *ngIf="formGroup.controls['lastName'].errors?.['required']">Le Nom est requis.</p>
+
     </div>
     <div class="w-[70%] m-auto">
       <label class="input input-bordered flex items-center gap-2">
         Prénom :
         <input type="text" class="grow" placeholder="John"  formControlName="firstName" />
       </label>
+      <p *ngIf="formGroup.controls['firstName'].errors?.['required']">Le Prénom est requis.</p>
+
     </div>
     <!-- Ajoutez d'autres champs spécifiques à l'inscription ici -->
   </ng-container>
