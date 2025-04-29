@@ -10,8 +10,8 @@ import { ButtonComponent } from "../../shared/atoms/button/button.component";
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  welcomePage: string = './assets/welcomePage.png';
-  badgeCertification: string = './assets/badgeCertifcation.png';
-  badgeChecklist: string = './assets/badgeChecklist.png';
-  badgePc: string = './assets/badgePc.png';
+  welcomePage: string = './assets/image/welcomePage.png';
+  badgeCertification: string = './assets/images/badgeCertifcation.png';
+  badgeChecklist: string = './assets/images/badgeChecklist.png';
+  badgePc: string = './assets/images/badgePc.png';
 }

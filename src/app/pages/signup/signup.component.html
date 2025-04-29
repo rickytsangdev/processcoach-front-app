@@ -11,8 +11,11 @@
 
   <div class="m-5">
     <!-- component form here -->
-    <app-form [formType]="formType"></app-form>
+    <app-form [formGroup]="form" [formType]="formType"></app-form>
     <!-- <app-button [do]="action"></app-button> -->
+    <button (click)="onSubmit()" class="btn btn-primary mt-5">
+      Soumettre
+    </button>
   </div>
 
   <div class="flex justify-center">
