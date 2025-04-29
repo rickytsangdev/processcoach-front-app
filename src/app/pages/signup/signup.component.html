@@ -13,11 +13,12 @@
     <!-- component form here -->
     <app-form [formGroup]="form" [formType]="formType"></app-form>
     <!-- <app-button [do]="action"></app-button> -->
-    <button (click)="onSubmit()" class="btn btn-primary mt-5">
-      Soumettre
-    </button>
- 
-
+    <!-- inscription button  -->
+    <div class="flex justify-center">
+      <button (click)="onSubmit()" class="btn w-4/5 bg-green-500 hover:bg-green-900 mt-5 text-white">
+        Soumettre
+      </button>
+    </div>
   </div>
 
   <div class="flex justify-center">
