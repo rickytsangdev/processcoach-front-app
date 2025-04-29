@@ -1,7 +1,7 @@
 <div
-  class="min-h-screen bg-[#00a896] flex flex-col justify-center items-center text-white text-center h-96 "
+  class="min-h-screen bg-[#00a896] flex flex-col justify-center items-center text-white text-center h-96"
 >
-  <h1 class="flex justify-center font-bold lg:text-[38px] sm:text-[20px] ">
+  <h1 class="flex justify-center font-bold lg:text-[38px] sm:text-[20px]">
     <span class="text-amber-400">Espace Formation</span> -
     <span class="text-alice-400"> {{ title | uppercase }}</span>
   </h1>
@@ -11,5 +11,14 @@
   <div class="mt-10">
     <!-- component form here -->
     <app-form></app-form>
+  </div>
+  <!-- si l'utilisateur a deja un compte | bloc d'information  -->
+  <div class="flex justify-center">
+    <div class="flex flex-col text-center gap-5">
+      <p>
+        Vous n'avez pas encore de compte ?<br />
+        <a routerLink="/signup"> Inscrivez-vous</a>
+      </p>
+    </div>
   </div>
 </div>
