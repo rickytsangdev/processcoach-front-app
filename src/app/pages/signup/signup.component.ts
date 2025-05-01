@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FormComponent } from '../../shared/molecules/form/form.component';
 import { CommonModule } from '@angular/common';
+
+
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -17,8 +19,8 @@ export class SignupComponent {
   json : any
 
   form = this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.minLength(3)]], 
-    password :['', Validators.required],
+    email: ['', [Validators.required, Validators.minLength(3), Validators.email]], 
+    password :['', Validators.required, Validators.minLength(7)],
     lastName : ['', Validators.required], 
     firstName : ['', Validators.required],
   })

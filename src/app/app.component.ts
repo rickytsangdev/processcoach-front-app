@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from './shared/organisms /header/header.component';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,6 +8,16 @@ import { HeaderComponent } from './shared/organisms /header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'training.processcoach-front';
+export class AppComponent implements OnInit {
+
+  constructor(private route: ActivatedRoute) {
+
+
+}
+
+ngOnInit(): void {
+  console.log(this.route.snapshot);
+  
+}
+title = 'training.processcoach-front';
 }
