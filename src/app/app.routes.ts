@@ -8,12 +8,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
+import { CourseComponent } from './pages/course/course.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'library', component: LibraryComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'products/:id', component: CourseComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'user/dashboard', component: DashboardComponent },
