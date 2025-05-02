@@ -35,20 +35,16 @@
         (keydown)="preventSpace($event)"
       />
     </label>
+    <!-- condition for email input -->
     <p
       class="text-red-400"
       *ngIf=" formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['email'].errors?.['required']"
     >
       L'email est requis.
     </p>
-    <p
-      class="text-red-400"
-      *ngIf=" formGroup.controls['email'].errors?.['minlength']"
-    >
-      L'email doit avoir au moins 3 caractères.
-    </p>
+  
     <p *ngIf="formGroup.controls['email'].errors?.['email']" class="text-red-400">L'email doit être valide</p>
-
+    <!-- condition for email input -->
   </div>
   <div class="w-[70%] m-auto">
     <label class="input input-bordered flex items-center gap-2">
@@ -72,24 +68,20 @@
         (keydown)="preventSpace($event)"
       />
     </label>
+      <!-- start condition for password input -->
     <p
       class="text-red-400"
-      *ngIf="formGroup.controls['password'].errors?.['required']"
+      *ngIf="formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['password'].errors?.['required']"
     >
       Le mot de passe est requis.
     </p>
     <p
-      class="text-red-400"
-      *ngIf=" formGroup.controls['password'].errors?.['minlength']"
-    >
-      L'email doit avoir au moins 3 caractères.
-    </p>
-    <p
-      class="text-red-400"
-      *ngIf=" formGroup.controls['password'].errors?.['minlength']"
-    >
-      Le mot de passe doit avoir au moins 7 caractères.
-    </p>
+    class="text-red-400" *ngIf="formGroup.controls['password'].errors?.['minlength']"
+  >
+    Le mot de passe doit avoir au moins 7 caractères.
+  </p>
+
+    <!-- end condition for password input -->
   </div>
   <ng-container *ngIf="formType === 'signup'">
     <div class="w-[70%] m-auto">
@@ -103,12 +95,21 @@
           (keydown)="preventSpace($event)"
         />
       </label>
+          <!-- start condition for LastName input -->
       <p
         class="text-red-400"
-        *ngIf="formGroup.controls['lastName'].errors?.['required']"
+        *ngIf="formGroup.controls['lastName'].touched &&  formGroup.controls['lastName'].dirty && formGroup.controls['lastName'].errors?.['required']"
       >
-        Le Nom est requis.
+        Le nom est requis.
       </p>
+      <p
+      class="text-red-400"
+      *ngIf=" formGroup.controls['lastName'].errors?.['minlength']"
+    >
+      Le nom doit avoir au moins 3 caractères.
+    </p>
+                <!-- end condition for LastName input -->
+
     </div>
     <div class="w-[70%] m-auto">
       <label class="input input-bordered flex items-center gap-2">
@@ -121,14 +122,25 @@
           (keydown)="preventSpace($event)"
         />
       </label>
+          <!-- start condition for firstName input -->
       <p
         class="text-red-400"
-        *ngIf="formGroup.controls['firstName'].errors?.['required']"
+        *ngIf="formGroup.controls['firstName'].touched &&  formGroup.controls['firstName'].dirty && formGroup.controls['firstName'].errors?.['required']"
       >
-        Le Prénom est requis.
+        Le prénom est requis.
       </p>
+      <p
+      class="text-red-400"
+      *ngIf=" formGroup.controls['firstName'].errors?.['minlength']"
+    >
+      Le prénom doit avoir au moins 3 caractères.
+    </p>
+          <!-- end condition for firstname input -->
+
     </div>
     <!-- Ajoutez d'autres champs spécifiques à l'inscription ici -->
+     <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   </ng-container>
   <div class="w-[70%] m-auto">
     <!-- login button -->

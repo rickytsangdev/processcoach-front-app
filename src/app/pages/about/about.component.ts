@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../shared/atoms/button/button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, RouterLink],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

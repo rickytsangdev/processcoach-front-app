@@ -20,14 +20,15 @@ export class SignupComponent {
 
   form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.minLength(3), Validators.email]], 
-    password :['', Validators.required, Validators.minLength(7)],
-    lastName : ['', Validators.required], 
-    firstName : ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(7)]],
+    lastName : ['', [Validators.required, Validators.minLength(3)]], 
+    firstName : ['',[Validators.required, Validators.minLength(3)]],
   })
 
-  onSubmit() {
+  onSubmit() { 
     console.log(this.form.value);
     console.log(this.form.controls.email.errors); // Récupère les valeurs du formulaire
+    console.log(this.form.controls['password'].errors);
   }
 
   constructor(private router: Router) {}
