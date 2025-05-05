@@ -1,10 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms';
 import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FormComponent } from '../../shared/molecules/form/form.component';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-signup',
@@ -15,17 +20,29 @@ import { CommonModule } from '@angular/common';
 export class SignupComponent {
   formType: 'login' | 'signup' = 'signup';
   action: string = "S'inscrire";
-  fb = inject(FormBuilder)
-  json : any
+  fb = inject(FormBuilder);
+  json: any;
 
   form = this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.minLength(3), Validators.email]], 
-    password: ['', [Validators.required, Validators.minLength(7)]],
-    lastName : ['', [Validators.required, Validators.minLength(3)]], 
-    firstName : ['',[Validators.required, Validators.minLength(3)]],
-  })
+    email: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.email],
+    ],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(
+          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+        ),
+      ],
+    ],
+    lastName: ['', [Validators.required, Validators.minLength(3)]],
+    firstName: ['', [Validators.required, Validators.minLength(3)]],
+  });
 
-  onSubmit() { 
+  onSubmit() {
     console.log(this.form.value);
     console.log(this.form.controls.email.errors); // Récupère les valeurs du formulaire
     console.log(this.form.controls['password'].errors);
