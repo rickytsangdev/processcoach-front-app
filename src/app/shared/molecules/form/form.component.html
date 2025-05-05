@@ -28,9 +28,9 @@
         />
       </svg>
       <input
-        type="text"
+        type="email"
         class="grow"
-        placeholder="Email"
+        placeholder="Saisissez votre Email"
         formControlName="email"
         (keydown)="preventSpace($event)"
       />
@@ -61,13 +61,20 @@
         />
       </svg>
       <input
-        type="password"
+        [type]="showPassword ? 'text' : 'password'" 
         class="grow"
         value="password"
+        placeholder="Votre Mot de passe"
         formControlName="password"
         (keydown)="preventSpace($event)"
       />
+      <br>
+      <input type="checkbox"  class="checkbox checkbox-sm" (change)="togglePasswordVisibility()"
+      />
+      <p>Voir mot de passe</p>
+ 
     </label>
+
       <!-- start condition for password input -->
     <p
       class="text-red-400"
@@ -78,8 +85,13 @@
     <p
     class="text-red-400" *ngIf="formGroup.controls['password'].errors?.['minlength']"
   >
-    Le mot de passe doit avoir au moins 7 caractères.
+    Le mot de passe doit avoir au moins 8 caractères.
   </p>
+  <p
+  class="text-red-400" *ngIf="formGroup.controls['password'].errors?.['pattern']"
+>
+  Au moins 1 lettre majuscule, 1 lettre minuscule et 1 chiffre
+</p>
 
     <!-- end condition for password input -->
   </div>
@@ -117,7 +129,7 @@
         <input
           type="text"
           class="grow"
-          placeholder="John"
+          placeholder="Jane"
           formControlName="firstName"
           (keydown)="preventSpace($event)"
         />

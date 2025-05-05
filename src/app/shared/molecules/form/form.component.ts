@@ -9,6 +9,8 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './form.component.html',
 })
 export class FormComponent {
+  showPassword:boolean = false;
+
   connectionBtn = 'Se connecter';
   @Input() formType: 'login' | 'signup' = 'login';
   @Input() formGroup!: FormGroup; // Reçoit le FormGroup du parent
@@ -19,5 +21,9 @@ export class FormComponent {
     if (event.code === 'Space') {
       event.preventDefault();
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }
