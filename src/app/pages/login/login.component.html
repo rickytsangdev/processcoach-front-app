@@ -44,6 +44,7 @@
             />
           </svg>
           <input
+            #email="ngModel"
             type="email"
             class="grow"
             name="email"
@@ -53,6 +54,9 @@
             required
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?"          />
         </label>
+        @if(email.errors && email.touched && email.dirty) {
+          <p class="text-red-400 flex">L'adresse mail n'est pas valide</p>
+        }
       </div>
       <!-- FORMULAIRE  -->
       <!-- Champ mot de passe -->
