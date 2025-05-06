@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -9,6 +8,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   document!: any;
+  
 
   goToUrl(): void {
     this.document.location.href = 'https://processcoach.fr';
