@@ -12,4 +12,16 @@ import { RouterLink } from '@angular/router';
 })
 export class LoginComponent {
   title: string = 'Process Coach';
+  showPassword: boolean = false;
+
+  // exclu l'utilisation de l'espace dans le champ de texte
+  preventSpace(event: KeyboardEvent): void {
+    if (event.code === 'Space') {
+      event.preventDefault();
+    }
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 }
