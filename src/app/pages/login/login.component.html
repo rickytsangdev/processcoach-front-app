@@ -13,7 +13,7 @@
     <!-- ------------------------------------- -->
     <!-- use template form for login form  -->
     <form
-      #loginForm="ngForm"
+      #loginForm="ngForm" (ngSubmit)="login()"  
       class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
     >
       <div>{{ loginForm.valid }}</div>
@@ -52,10 +52,11 @@
             (keydown)="preventSpace($event)"
             [(ngModel)]="credentials.email"
             required
-            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?"          />
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?"
+          />
         </label>
         @if(email.errors && email.touched && email.dirty) {
-          <p class="text-red-400 flex">L'adresse mail n'est pas valide</p>
+        <p class="text-red-400 flex">L'adresse mail n'est pas valide</p>
         }
       </div>
       <!-- FORMULAIRE  -->
@@ -75,11 +76,15 @@
             />
           </svg>
           <input
+            #password="ngModel"
             [type]="showPassword ? 'text' : 'password'"
             class="grow"
             placeholder="Votre mot de passe"
             name="password"
+            [(ngModel)]="credentials.password"
             (keydown)="preventSpace($event)"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
           />
           <br />
           <input
@@ -89,11 +94,14 @@
           />
           <p>Voir mot de passe</p>
         </label>
+        @if(password.errors && password.touched && password.dirty) {
+        <p class="text-red-400 flex">Le mot de passe n'est pas valide</p>
+        }
       </div>
       <!-- Loggin button  -->
       <div class="flex justify-center">
         <button
-          [disabled]=""
+          [disabled]="!loginForm.valid"
           class="btn w-2/5 bg-green-500 hover:bg-green-900 mt-5 text-white"
         >
           Se connecter

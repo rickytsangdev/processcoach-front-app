@@ -30,4 +30,8 @@ export class LoginComponent {
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
+
+  login(){
+    console.log(this.credentials);
+  }
 }
