@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
-import { FormComponent } from '../../shared/molecules/form/form.component';
+import { Component, OnInit } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormComponent, UpperCasePipe, RouterLink],
+  imports: [FormsModule, UpperCasePipe, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   title: string = 'Process Coach';
   showPassword: boolean = false;
+  
+  credentials = {
+    email: '',
+    password: '',
+  };
 
+  
   // exclu l'utilisation de l'espace dans le champ de texte
   preventSpace(event: KeyboardEvent): void {
     if (event.code === 'Space') {

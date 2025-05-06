@@ -10,16 +10,24 @@
   </h2>
   <div class="mt-10">
     <!-- component form here to insert  -->
-    <form class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"> 
+    <!-- ------------------------------------- -->
+    <!-- use template form for login form  -->
+    <form
+      #loginForm
+      class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
+    >
+      <div>{{ loginForm.autocomplete }}</div>
       <div class="flex justify-between m-5">
-        <h1 class="text-xl font-bold text-center text-black">Connexion : </h1>
+        <h1 class="text-xl font-bold text-center text-black">Connexion :</h1>
         <a
           routerLink="/"
           class="underline text-lg font-bold text-black hover:text-blue-500"
         >
-          Mot de passe oublié ?  
+          Mot de passe oublié ?
         </a>
       </div>
+      <!-- FORMULAIRE -->
+      <!-- email -->
       <div class="w-[70%] m-auto">
         <label class="input input-bordered flex items-center gap-2">
           <svg
@@ -38,12 +46,15 @@
           <input
             type="email"
             class="grow"
+            name="email"
             placeholder="Saisissez votre Email"
-            formControlName="email"
             (keydown)="preventSpace($event)"
+            [(ngModel)]="credentials.email"
           />
         </label>
       </div>
+      <!-- FORMULAIRE  -->
+      <!-- Champ mot de passe -->
       <div class="w-[70%] m-auto">
         <label class="input input-bordered flex items-center gap-2">
           <svg
@@ -59,28 +70,34 @@
             />
           </svg>
           <input
-            [type]="showPassword ? 'text' : 'password'" 
+            [type]="showPassword ? 'text' : 'password'"
             class="grow"
             placeholder="Votre mot de passe"
-            formControlName="password"
+            name="password"
+            [(ngModel)]="credentials.password"
             (keydown)="preventSpace($event)"
           />
-          <br>
-          <input type="checkbox"  class="checkbox checkbox-sm" (change)="togglePasswordVisibility()"
+          <br />
+          <input
+            type="checkbox"
+            class="checkbox checkbox-sm"
+            (change)="togglePasswordVisibility()"
           />
           <p>Voir mot de passe</p>
-     
         </label>
       </div>
       <!-- Loggin button  -->
       <div class="flex justify-center">
-       <button [disabled]=""  class="btn w-2/5 bg-green-500 hover:bg-green-900 mt-5 text-white">
-         Se connecter
-       </button>
-     </div>
+        <button
+          [disabled]=""
+          class="btn w-2/5 bg-green-500 hover:bg-green-900 mt-5 text-white"
+        >
+          Se connecter
+        </button>
+      </div>
     </form>
   </div>
-    
+
   <!-- si l'utilisateur a deja un compte | bloc d'information  -->
   <div class="flex justify-center">
     <div class="flex flex-col text-center gap-5">
