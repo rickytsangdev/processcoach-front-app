@@ -13,10 +13,10 @@
     <!-- ------------------------------------- -->
     <!-- use template form for login form  -->
     <form
-      #loginForm
+      #loginForm="ngForm"
       class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
     >
-      <div>{{ loginForm.autocomplete }}</div>
+      <div>{{ loginForm.valid }}</div>
       <div class="flex justify-between m-5">
         <h1 class="text-xl font-bold text-center text-black">Connexion :</h1>
         <a
@@ -50,7 +50,8 @@
             placeholder="Saisissez votre Email"
             (keydown)="preventSpace($event)"
             [(ngModel)]="credentials.email"
-          />
+            required
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?"          />
         </label>
       </div>
       <!-- FORMULAIRE  -->
@@ -74,7 +75,6 @@
             class="grow"
             placeholder="Votre mot de passe"
             name="password"
-            [(ngModel)]="credentials.password"
             (keydown)="preventSpace($event)"
           />
           <br />
