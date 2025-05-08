@@ -7,6 +7,9 @@ import {provideFirebaseApp, initializeApp } from '@angular/fire/app'
 // integrate auth
 import { provideAuth, getAuth } from '@angular/fire/auth'
 
+// import firestore
+import {provideFirestore, getFirestore} from '@angular/fire/firestore'
+
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
     provideFirebaseApp( () => initializeApp({
@@ -19,5 +22,6 @@ export const appConfig: ApplicationConfig = {
       measurementId: "G-GB0LCQ4VB5"
     })), 
     provideAuth(() => getAuth()),
+    provideFirestore(()=> getFirestore()), 
   ],
 };
