@@ -10,6 +10,8 @@ import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FormComponent } from '../../shared/molecules/form/form.component';
 import { CommonModule } from '@angular/common';
+import { Auth } from '@angular/fire/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 @Component({
   selector: 'app-signup',
@@ -22,6 +24,9 @@ export class SignupComponent {
   action: string = "S'inscrire";
   fb = inject(FormBuilder);
   json: any;
+  #auth = inject(Auth);
+  alertMsg: any;
+  alertColor: any;
 
   form = this.fb.nonNullable.group({
     email: [
@@ -42,10 +47,30 @@ export class SignupComponent {
     firstName: ['', [Validators.required, Validators.minLength(3)]],
   });
 
-  onSubmit() {
+  async register() {
     console.log(this.form.value);
-    console.log(this.form.controls.email.errors); // Récupère les valeurs du formulaire
+    console.log(this.form.controls.email.errors);
     console.log(this.form.controls['password'].errors);
+
+    const { email, password, lastName, firstName } = this.form.getRawValue();
+
+    try {
+      // Récupère les valeurs du formulaire
+      const userCred = await createUserWithEmailAndPassword(
+        this.#auth,
+        email,
+        password
+      );
+
+      console.log(userCred);
+    } catch (error) {
+      console.log(error);
+
+      alert('An expected error occured ! try again later. ');
+      return;
+    }
+
+    alert('Success ! Your account has been created !');
   }
 
   constructor(private router: Router) {}
