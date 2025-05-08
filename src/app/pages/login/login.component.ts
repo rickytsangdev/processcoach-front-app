@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
+import { NgIf, UpperCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 

@@ -54,9 +54,12 @@
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?"
           />
         </label>
-        @if(email.errors && email.touched && email.dirty) {
-        <p class="text-red-400 flex">L'adresse mail n'est pas valide</p>
-        }
+        <div class="max-h-6 h-6">
+          @if(email.errors && email.touched && email.dirty) {
+            
+          <p class="text-red-400 flex max-h-6	">L'adresse mail n'est pas valide</p>
+          }
+        </div>
       </div>
       <!-- FORMULAIRE  -->
       <!-- Champ mot de passe -->
@@ -93,15 +96,17 @@
           />
           <p>Voir mot de passe</p>
         </label>
+        <div class="max-h-5 h-5">
         @if(password.errors && password.touched && password.dirty) {
-        <p class="text-red-400 flex">Le mot de passe n'est pas valide</p>
+        <p class="text-red-400 flex max-h-6	">Le mot de passe n'est pas valide</p>
         }
+      </div>
       </div>
       <!-- Loggin button  -->
       <div class="flex justify-center">
         <button
           [disabled]="!loginForm.valid"
-          class="btn w-2/5 bg-green-500 hover:bg-green-900 mt-5 text-white"
+          class="btn w-2/5 bg-green-500 hover:bg-green-900 text-white"
         >
           Se connecter
         </button>
