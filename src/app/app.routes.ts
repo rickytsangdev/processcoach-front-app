@@ -14,7 +14,7 @@ import { AnalysisComponent } from './pages/admin/analysis/analysis.component';
 import { UserListComponent } from './pages/admin/user-list/user-list.component';
 import { ManagementComponent } from './pages/admin/management/management.component';
 import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
-
+import { adminGuard } from './guards/admin.guard';
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['/']);
 
 export const routes: Routes = [
@@ -51,21 +51,19 @@ export const routes: Routes = [
   {
     path: 'admin/management',
     component: ManagementComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToHome },
+    canActivate: [adminGuard],
   },
   {
     path: 'admin/analysis',
     component: AnalysisComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToHome },
+    canActivate: [adminGuard],
   },
   {
     path: 'admin/user-list',
     component: UserListComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToHome },
+    canActivate: [adminGuard],
   },
+
   // redirection routes
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
