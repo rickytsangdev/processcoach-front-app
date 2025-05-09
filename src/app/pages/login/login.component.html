@@ -13,7 +13,8 @@
     <!-- ------------------------------------- -->
     <!-- use template form for login form  -->
     <form
-      #loginForm="ngForm" (ngSubmit)="login()"  
+      #loginForm="ngForm"
+      (ngSubmit)="login()"
       class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
     >
       <div class="flex justify-between m-5">
@@ -28,7 +29,12 @@
       <!-- FORMULAIRE -->
       <!-- email -->
       <div class="w-[70%] m-auto">
-        <label class="input input-bordered flex items-center gap-2">
+        <label
+          class="input input-bordered flex items-center gap-2"
+          [ngClass]="{
+      'border-green-600 border-2': email.valid,
+    }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -56,15 +62,22 @@
         </label>
         <div class="max-h-6 h-6">
           @if(email.errors && email.touched && email.dirty) {
-            
-          <p class="text-red-400 flex max-h-6	">L'adresse mail n'est pas valide</p>
+
+          <p class="text-red-400 flex max-h-6">
+            L'adresse mail n'est pas valide
+          </p>
           }
         </div>
       </div>
       <!-- FORMULAIRE  -->
       <!-- Champ mot de passe -->
       <div class="w-[70%] m-auto">
-        <label class="input input-bordered flex items-center gap-2">
+        <label
+          class="input input-bordered flex items-center gap-2"
+          [ngClass]="{
+            'border-green-600 border-2': password.valid
+          }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -97,10 +110,12 @@
           <p>Voir mot de passe</p>
         </label>
         <div class="max-h-5 h-5">
-        @if(password.errors && password.touched && password.dirty) {
-        <p class="text-red-400 flex max-h-6	">Le mot de passe n'est pas valide</p>
-        }
-      </div>
+          @if(password.errors && password.touched && password.dirty) {
+          <p class="text-red-400 flex max-h-6">
+            Le mot de passe n'est pas valide
+          </p>
+          }
+        </div>
       </div>
       <!-- Loggin button  -->
       <div class="flex justify-center">

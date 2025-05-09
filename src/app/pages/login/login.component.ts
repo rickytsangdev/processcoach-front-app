@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgIf, UpperCasePipe } from '@angular/common';
+import { NgIf, UpperCasePipe, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, UpperCasePipe, RouterLink],
+  imports: [FormsModule, UpperCasePipe, RouterLink, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
