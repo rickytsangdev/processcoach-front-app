@@ -3,7 +3,7 @@
   class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
 >
   <div class="flex justify-between m-5">
-    <h1 class="text-xl font-bold text-center text-black">Inscription : </h1>
+    <h1 class="text-xl font-bold text-center text-black">Inscription :</h1>
     <a
       routerLink="/login"
       class="underline text-lg font-bold text-black hover:text-blue-500"
@@ -36,14 +36,21 @@
       />
     </label>
     <!-- condition for email input -->
-    <p
+    <div class="max-h-6 h-6">
+      <p
+        class="text-red-400"
+        *ngIf=" formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['email'].errors?.['required']"
+      >
+        L'email est requis.
+      </p>
+      
+      <p
+      *ngIf="formGroup.controls['email'].errors?.['email']"
       class="text-red-400"
-      *ngIf=" formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['email'].errors?.['required']"
-    >
-      L'email est requis.
+      >
+      L'email doit être valide
     </p>
-  
-    <p *ngIf="formGroup.controls['email'].errors?.['email']" class="text-red-400">L'email doit être valide</p>
+  </div>
     <!-- condition for email input -->
   </div>
   <div class="w-[70%] m-auto">
@@ -61,21 +68,24 @@
         />
       </svg>
       <input
-        [type]="showPassword ? 'text' : 'password'" 
+        [type]="showPassword ? 'text' : 'password'"
         class="grow"
         value="password"
         placeholder="Votre Mot de passe"
         formControlName="password"
         (keydown)="preventSpace($event)"
       />
-      <br>
-      <input type="checkbox"  class="checkbox checkbox-sm" (change)="togglePasswordVisibility()"
+      <br />
+      <input
+        type="checkbox"
+        class="checkbox checkbox-sm"
+        (change)="togglePasswordVisibility()"
       />
       <p>Voir mot de passe</p>
- 
     </label>
 
-      <!-- start condition for password input -->
+    <!-- start condition for password input -->
+    <div class="max-h-6 h-6">
     <p
       class="text-red-400"
       *ngIf="formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['password'].errors?.['required']"
@@ -83,15 +93,18 @@
       Le mot de passe est requis.
     </p>
     <p
-    class="text-red-400" *ngIf="formGroup.controls['password'].errors?.['minlength']"
-  >
-    Le mot de passe doit avoir au moins 8 caractères.
-  </p>
-  <p
-  class="text-red-400" *ngIf="formGroup.controls['password'].errors?.['pattern']"
->
-  Au moins 1 lettre majuscule, 1 lettre minuscule et 1 chiffre
-</p>
+      class="text-red-400"
+      *ngIf="formGroup.controls['password'].errors?.['minlength']"
+    >
+      Le mot de passe doit avoir au moins 8 caractères.
+    </p>
+    <p
+      class="text-red-400"
+      *ngIf="formGroup.controls['password'].errors?.['pattern']"
+    >
+      Au moins 1 lettre majuscule, 1 lettre minuscule et 1 chiffre
+    </p>
+    </div>
 
     <!-- end condition for password input -->
   </div>
@@ -107,7 +120,8 @@
           (keydown)="preventSpace($event)"
         />
       </label>
-          <!-- start condition for LastName input -->
+      <!-- start condition for LastName input -->
+      <div class="max-h-6 h-6">
       <p
         class="text-red-400"
         *ngIf="formGroup.controls['lastName'].touched &&  formGroup.controls['lastName'].dirty && formGroup.controls['lastName'].errors?.['required']"
@@ -115,13 +129,13 @@
         Le nom est requis.
       </p>
       <p
-      class="text-red-400"
-      *ngIf=" formGroup.controls['lastName'].errors?.['minlength']"
-    >
-      Le nom doit avoir au moins 3 caractères.
-    </p>
-                <!-- end condition for LastName input -->
-
+        class="text-red-400"
+        *ngIf=" formGroup.controls['lastName'].errors?.['minlength']"
+      >
+        Le nom doit avoir au moins 3 caractères.
+      </p>
+      </div>
+      <!-- end condition for LastName input -->
     </div>
     <div class="w-[70%] m-auto">
       <label class="input input-bordered flex items-center gap-2">
@@ -134,7 +148,8 @@
           (keydown)="preventSpace($event)"
         />
       </label>
-          <!-- start condition for firstName input -->
+      <!-- start condition for firstName input -->
+      <div class="max-h-6 h-6">
       <p
         class="text-red-400"
         *ngIf="formGroup.controls['firstName'].touched &&  formGroup.controls['firstName'].dirty && formGroup.controls['firstName'].errors?.['required']"
@@ -142,21 +157,16 @@
         Le prénom est requis.
       </p>
       <p
-      class="text-red-400"
-      *ngIf=" formGroup.controls['firstName'].errors?.['minlength']"
-    >
-      Le prénom doit avoir au moins 3 caractères.
-    </p>
-          <!-- end condition for firstname input -->
-
+        class="text-red-400"
+        *ngIf=" formGroup.controls['firstName'].errors?.['minlength']"
+      >
+        Le prénom doit avoir au moins 3 caractères.
+      </p>
+      <!-- end condition for firstname input -->
+    </div>
     </div>
     <!-- Ajoutez d'autres champs spécifiques à l'inscription ici -->
-     <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   </ng-container>
-  <div class="w-[70%] m-auto">
-    <!-- login button -->
-    <!-- <app-button [do]="connectionBtn"></app-button> -->
-    <!-- <CallToAction text="Se Connecter" /> -->
-  </div>
 </form>
