@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
+import { Auth, authState } from '@angular/fire/auth'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { Firestore, collection, addDoc, doc, setDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, doc, setDoc, } from '@angular/fire/firestore';
+
 import IUser from '../models/user.models';
 
 @Injectable({
@@ -10,9 +11,11 @@ import IUser from '../models/user.models';
 export class AuthService {
   #auth = inject(Auth);
   #firestore= inject(Firestore)
+  authState$ = authState(this.#auth); 
 
-  constructor() { }
-
+constructor(){
+  this.authState$.subscribe(console.log)
+}
 
 
   async createUser(userData : IUser) {
@@ -31,7 +34,7 @@ export class AuthService {
 
           updateProfile(userCred.user, {
             displayName : userData.lastName,
-            
+
           })
   }
 }

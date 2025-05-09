@@ -28,12 +28,13 @@
         tabindex="0"
         class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-      <li>
-        <a routerLink="/about">La plateforme</a>
-      </li>
+        <li>
+          <a routerLink="/about">La plateforme</a>
+        </li>
         <li>
           <a routerLink="/products">Nos Formations</a>
         </li>
+        @if (auth.authState$ | async) {
         <li>
           <a routerLink="/signup">S'inscrire</a>
         </li>
@@ -42,14 +43,32 @@
             <button class="btn btn-outline btn-success">Se Connecter</button>
           </a>
         </li>
+        }
       </ul>
     </div>
+
+    @if (auth.authState$ | async) {
+    <li>
+      <a routerLink="/dashboard">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/faq">J'ai une question</a>
+    </li>    <li>
+      <a routerLink="/dashboard/profile">Mes Attestations</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/settings">Mes Informations</a>
+    </li>
+    <li>
+      <a routerLink="/">Déconnexion</a>
+    </li>
+    } @else {
     <ul
       class="hidden sm:flex gap-5 menu menu-horizontal px-1 h-full w-full items-center text-xl text-[#00A778]"
     >
-    <li>
-      <a routerLink="/about">La plateforme</a>
-    </li>
+      <li>
+        <a routerLink="/about">La plateforme</a>
+      </li>
       <li>
         <a routerLink="/products">Nos Formations</a>
       </li>
@@ -62,5 +81,6 @@
         </a>
       </div>
     </ul>
+    }
   </div>
 </div>
