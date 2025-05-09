@@ -12,7 +12,6 @@ import { FormComponent } from '../../shared/molecules/form/form.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -23,12 +22,11 @@ export class SignupComponent {
   formType: 'login' | 'signup' = 'signup';
   action: string = "S'inscrire";
   fb = inject(FormBuilder);
-  auth= inject(AuthService); 
+  auth = inject(AuthService);
   json: any;
 
   alertMsg: any;
   alertColor: any;
-
 
   form = this.fb.nonNullable.group({
     email: [
@@ -50,9 +48,8 @@ export class SignupComponent {
   });
 
   async register() {
-
     try {
-     await this.auth.createUser(this.form.getRawValue())
+      await this.auth.createUser(this.form.getRawValue());
     } catch (error) {
       console.log(error);
 
@@ -61,6 +58,7 @@ export class SignupComponent {
     }
 
     alert('Success ! Your account has been created !');
+    this.router.navigate(['/dashboard']);
   }
 
   constructor(private router: Router) {}
