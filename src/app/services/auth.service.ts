@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { Firestore, collection, addDoc, doc, setDoc } from '@angular/fire/firestore';
 import IUser from '../models/user.models';
 
 @Injectable({
@@ -24,9 +24,14 @@ export class AuthService {
           );
     
           // on s'occupe ici de sauvegarder les autres éléments du formulaire
-          await addDoc(collection(this.#firestore, 'users'), {
+          await setDoc(doc(this.#firestore, 'users', userCred.user.uid), {
             firstName : userData.firstName, 
             lastName : userData.lastName
+          })
+
+          updateProfile(userCred.user, {
+            displayName : userData.lastName,
+            
           })
   }
 }
