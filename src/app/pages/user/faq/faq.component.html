@@ -1,0 +1,57 @@
+<section class="bg-green-gradient min-h-screen">
+  <div class="flex flex-col justify-center items-center">
+    <h1 class="text-4xl text-white mt-3">FAQ</h1>
+    <h2 class="text-2xl text-white pb-8">- Questions Fréquemment Posées -</h2>
+    <div class="container_accordion">
+
+      <app-accordion
+        [title]="'Quels sont les moyens de paiement acceptés ?'"
+        [content]="
+          'Nous acceptons les paiements par carte bancaire, PayPal et virement bancaire.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+      <app-accordion
+        [title]="'Puis-je annuler mon abonnement ?'"
+        [content]="
+          'Oui, vous pouvez annuler votre abonnement à tout moment depuis votre espace utilisateur.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+      <app-accordion
+        [title]="'Comment accéder à mes cours ?'"
+        [content]="
+          'Une fois connecté, rendez-vous dans la section Mes Formations pour accéder à vos cours.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+      <app-accordion
+        [title]="'Puis-je télécharger les ressources des cours ?'"
+        [content]="
+          'Oui, les ressources téléchargeables sont disponibles dans chaque module de cours.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+      <app-accordion
+        [title]="'Comment obtenir mon certificat de formation ?'"
+        [content]="
+          'Une fois le cours terminé, vous pouvez télécharger votre certificat depuis la section Attestations.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+      <app-accordion
+        [title]="'Que faire si j\'ai oublié mon mot de passe ?'"
+        [content]="
+          'Cliquez sur Mot de passe oublié sur la page de connexion et suivez les instructions.'
+        "
+        [name]="'faq-group'"
+        [checked]="false"
+      ></app-accordion>
+    </div>
+  </div>
+</section>

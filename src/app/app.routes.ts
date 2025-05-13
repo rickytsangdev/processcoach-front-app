@@ -9,7 +9,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CourseComponent } from './pages/course/course.component';
 import { CertificateComponent } from './pages/user/certificate/certificate.component';
-import { FaqComponent } from './pages/faq/faq.component';
+import { FaqComponent } from './pages/user/faq/faq.component';
 import { AnalysisComponent } from './pages/admin/analysis/analysis.component';
 import { UserListComponent } from './pages/admin/user-list/user-list.component';
 import { ManagementComponent } from './pages/admin/management/management.component';
