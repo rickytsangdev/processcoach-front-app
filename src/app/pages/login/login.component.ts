@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   showPassword: boolean = false;
   auth = inject(Auth);
   router = inject(Router);
-  isLoading: boolean = false; // Propriété pour gérer l'état de chargement
+  isLoading: boolean = false; // Propriété pour gérer l'é
 
   credentials = {
     email: '',

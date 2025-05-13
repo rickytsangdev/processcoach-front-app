@@ -1,10 +1,29 @@
-<section class="bg-green-gradient h-screen">
-  <div class="flex justify-center items-center p-5">
-    <h1 class="text-4xl text-white">DASHBOARD USER</h1>
+<section class="bg-green-gradient min-h-screen">
+  <div class="flex flex-col justify-center items-center">
+    <h1 class="text-4xl text-white mt-3">MON TABLEAU DE BORD</h1>
+    <h2 class="text-2xl text-white">- Mes Formations - </h2>
+    <div class="container">
+      <div class="grid grid-cols-4 sm:grid-cols-3">
+        <div
+          *ngFor="let product of products"
+          class="card border-solid  rounded-md"
+          style="border-color: #00a778"
+        >
+          <div
+            class="card-body bg-white rounded-md flex flex-col items-center text-center"
+          >
+            <h2 class="card-title mb-2">{{ product.title }}</h2>
+            <h3 class="text-md text-gray-600 mb-2">{{ product.subtitle }}</h3>
+            <figure>
+              <img src="{{ product.image }}" alt="{{ product.title }}" />
+            </figure>
+            <p class="text-sm text-gray-700 mb-4">{{ product.description }}</p>
+            <div class="card-actions">
+              <button class="btn btn-primary">{{ product.buttonText }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h2 class="text-white xl">MES FORMATIONS</h2>
-  <p>
-    Here I can controle all my courses that I purchased, and I can also look at
-    my progression UI as a student, I acceed of a specific course HERE !
-  </p>
 </section>

@@ -1,0 +1,15 @@
+.card {
+  transform: scale(0.9); /* Réduction */
+  transform-origin: center; 
+}
+
+.card img {
+  width: 100%;
+  height: auto; 
+}
+
+.container {
+  max-width: 100%;
+  overflow: hidden; 
+  box-sizing: border-box; 
+}
