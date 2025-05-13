@@ -3,16 +3,18 @@
 >
   <h1 class="flex justify-center font-bold lg:text-[38px] sm:text-[20px]">
     <span class="text-amber-400">Espace Formation</span> -
-    <span routerLink="/home" class="text-alice-400 cursor-pointer"> {{ title | uppercase }}</span>
+    <span routerLink="/home" class="text-alice-400 cursor-pointer">
+      {{ title | uppercase }}
+    </span>
   </h1>
   <h2 class="flex justify-center lg:text-[24px]">
     Connectez-vous dès maintenant !
   </h2>
   <div class="mt-10">
-    <!-- component form here to insert  -->
-    <!-- ------------------------------------- -->
-    <!-- use template form for login form  -->
+    <span *ngIf="isLoading" class="loading loading-spinner text-warning"></span>
+    <!-- Affiche le spinner si `isLoading` est actif -->
     <form
+      *ngIf="!isLoading"
       #loginForm="ngForm"
       (ngSubmit)="login()"
       class="space-y-8 border-2 w-[750px] m-auto border-green-500 bg-white text-black rounded-[15px] pb-5"
@@ -32,8 +34,8 @@
         <label
           class="input input-bordered flex items-center gap-2"
           [ngClass]="{
-      'border-green-600 border-2': email.valid,
-    }"
+            'border-green-600 border-2': email.valid
+          }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +64,6 @@
         </label>
         <div class="max-h-6 h-6">
           @if(email.errors && email.touched && email.dirty) {
-
           <p class="text-red-400 flex max-h-6">
             L'adresse mail n'est pas valide
           </p>

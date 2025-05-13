@@ -2,7 +2,9 @@
   class="header navbar bg-[#FCFCFD] h-25 items-center border-b border-emerald-300 flex-wrap sm:flex-nowrap w-full overflow-hidden"
 >
   <div class="flex-1">
-    <a routerLink="/home" class="btn btn-ghost text-2xl sm:text-4xl"
+    <a
+      [routerLink]="isLogginIn ? '/dashboard' : '/home'"
+      class="btn btn-ghost text-2xl sm:text-4xl"
       >PROCESS COACH</a
     >
   </div>
@@ -53,7 +55,8 @@
     </li>
     <li>
       <a routerLink="/faq">J'ai une question</a>
-    </li>    <li>
+    </li>
+    <li>
       <a routerLink="/user/certificate">Mes Attestations</a>
     </li>
     <li>

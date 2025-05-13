@@ -12,16 +12,29 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   title: string = 'Process Coach';
   showPassword: boolean = false;
   auth = inject(Auth);
   router = inject(Router);
+  isLoading: boolean = false; // Propriété pour gérer l'état de chargement
 
   credentials = {
     email: '',
     password: '',
   };
+
+  ngOnInit(): void {
+    this.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.isLoading = true; // Activer le spinner
+        setTimeout(() => {
+          this.isLoading = false; // Désactiver le spinner
+          this.router.navigate(['/dashboard']);
+        }, 3000); // Redirection après 3 secondes
+      }
+    });
+  }
 
   // exclu l'utilisation de l'espace dans le champ de texte
   preventSpace(event: KeyboardEvent): void {
@@ -43,7 +56,7 @@ export class LoginComponent {
         this.credentials.password
       );
     } catch (error) {
-      alert('Impossible de se connecter. Le compte n\'existe pas. ');
+      alert("Impossible de se connecter. Le compte n'existe pas. ");
       return;
     }
     alert('Success ! You are connected !');
