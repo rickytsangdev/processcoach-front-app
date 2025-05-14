@@ -1,1 +1,113 @@
-<h2 class="text-2xl text-white pb-8">- Mes Informations -</h2>
+<h2 class="text-2xl text-black pb-8 text-center">- Mes Informations -</h2>
+<section class="informations_bloc_section flex justify-center gap-2">
+  <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[680px]">
+    <div class="avatar flex items-start p-2 pt-4 pl-4">
+      <div class="qui_suis_je mr-2 mt-2 w-[70%]">
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          class="w-8 h-8 object-cover rounded border border-gray-300"
+          style="margin-top: 8px; margin-left: 4px"
+        />
+      </div>
+      <div class="input_group flex flex-col gap-5 w-full mt-4">
+        <input
+          type="text"
+          placeholder="Nom"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <input
+          type="text"
+          placeholder="Prénom"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <input type="file" class="file-input w-full max-w-xs text-xs" />
+      </div>
+    </div>
+
+    <div class="card-body">
+      <p class="card-title text-sm">Numéro de téléphone</p>
+      <input
+        type="text"
+        placeholder="06.XX.XX.XX.XX"
+        class="input input-bordered w-full max-w-xs"
+      />
+      <p class="card-title text-sm">Date de Naissance</p>
+      <div class="grid grid-cols-3 gap-2 mb-2">
+        <input
+          type="number"
+          min="1"
+          max="31"
+          placeholder="Jour"
+          class="input input-bordered input-accent w-full"
+        />
+        <input
+          type="number"
+          min="1"
+          max="12"
+          placeholder="Mois"
+          class="input input-bordered input-accent w-full"
+        />
+        <input
+          type="number"
+          min="1900"
+          max="2100"
+          placeholder="Année"
+          class="input input-bordered input-accent w-full"
+        />
+      </div>
+      <p class="card-title text-sm">Biographie</p>
+      <textarea class="textarea min-h-[10rem]" placeholder="Bio"></textarea>
+
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+  <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[500px] shadow-xl">
+    <!-- <figure>
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        alt="Shoes"
+      />
+    </figure> -->
+    <div class="card-body">
+      <h2 class="card-title">Mes Réseaux</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[250px] shadow-xl">
+      <!-- <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure> -->
+      <div class="card-body">
+        <h2 class="card-title">Shoes!</h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[240px] shadow-xl">
+      <!-- <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure> -->
+      <div class="card-body">
+        <h2 class="card-title">Shoes!</h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

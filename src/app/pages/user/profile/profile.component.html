@@ -1,6 +1,6 @@
-<section class="bg-green-gradient min-h-screen">
+<section class="bg-[#DDD] min-h-screen">
   <div class="flex flex-col justify-center items-center">
-    <h1 class="text-4xl text-white mt-3">MON PROFIL</h1>
+    <h1 class="text-4xl text-black mt-3">MON PROFIL</h1>
     <div class="menu_navigation">
       <!-- create component here after -->
       <ul class="menu bg-base-200 lg:menu-horizontal rounded-box">
@@ -21,7 +21,15 @@
               />
             </svg>
             Mes informations
-            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="!(currentUrl === '/user/profile' || currentUrl === '/user/profile/')"></span>
+            <span
+              class="badge badge-xs badge-info profile-badge"
+              [class.invisible]="
+                !(
+                  currentUrl === '/user/profile' ||
+                  currentUrl === '/user/profile/'
+                )
+              "
+            ></span>
           </a>
         </li>
         <li routerLink="/user/profile/certificate">
@@ -41,7 +49,10 @@
               />
             </svg>
             Mes attestations
-            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="currentUrl !== '/user/profile/certificate'"></span>
+            <span
+              class="badge badge-xs badge-info profile-badge"
+              [class.invisible]="currentUrl !== '/user/profile/certificate'"
+            ></span>
           </a>
         </li>
         <li routerLink="/user/profile/stats">
@@ -61,7 +72,10 @@
               />
             </svg>
             Mes Stats
-            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="currentUrl !== '/user/profile/stats'"></span>
+            <span
+              class="badge badge-xs badge-info profile-badge"
+              [class.invisible]="currentUrl !== '/user/profile/stats'"
+            ></span>
           </a>
         </li>
       </ul>
