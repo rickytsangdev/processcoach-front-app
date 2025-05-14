@@ -1,6 +1,7 @@
 <h2 class="text-2xl text-black pb-8 text-center">- Mes Informations -</h2>
 <section class="informations_bloc_section flex justify-center gap-2">
   <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[680px]">
+    <!-- CREATE COMPONENET FOR AVATAR INFORMATIONS -->
     <div class="avatar flex items-start p-2 pt-4 pl-4">
       <div class="qui_suis_je mr-2 mt-2 w-[70%]">
         <img
@@ -12,13 +13,16 @@
       <div class="input_group flex flex-col gap-5 w-full mt-4">
         <input
           type="text"
-          placeholder="Nom"
-          class="input input-bordered w-full max-w-xs"
+          placeholder="Ricky"
+          class="input input input-bordered w-full max-w-xs"
+          disabled
         />
+
         <input
           type="text"
-          placeholder="Prénom"
-          class="input input-bordered w-full max-w-xs"
+          placeholder="Tsang"
+          class="input input input-bordered w-full max-w-xs"
+          disabled
         />
         <input type="file" class="file-input w-full max-w-xs text-xs" />
       </div>
@@ -74,6 +78,7 @@
     </figure> -->
     <div class="card-body">
       <h2 class="card-title">Mes Réseaux</h2>
+      <hr />
       <div class="flex flex-col gap-5 w-full mt-4 justify-center">
         <input
           type="text"
@@ -103,6 +108,7 @@
       </div>
     </div>
   </div>
+  <!-- CREATE COMPONENT MES INFORMATIONS UTILES -->
   <div class="flex flex-col gap-2">
     <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[250px] shadow-xl">
       <!-- <figure>
@@ -112,11 +118,14 @@
           />
         </figure> -->
       <div class="card-body">
-        <h2 class="card-title">Mes Informations de connexion</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Sauvegarder</button>
-        </div>
+        <h2 class="card-title">Mes Informations Utiles</h2>
+        <hr />
+        <p class="card-title text-sm">email utilisé à l'inscription :</p>
+        <span class="badge">{{ email }}</span>
+        <p class="card-title text-sm">Formation en cours :</p>
+        <span class="badge">{{ status }}</span>
+        <p class="card-title text-sm">Statut d'apprenant :</p>
+        <span class="badge">{{ niveau }}</span>
       </div>
     </div>
     <div class="card bg-[#f2f2f2] w-[450px] max-w-[450px] h-[240px] shadow-xl">
@@ -127,11 +136,15 @@
           />
         </figure> -->
       <div class="card-body">
-        <h2 class="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Sauvegarder</button>
-        </div>
+        <h2 class="card-title">Mention légale</h2>
+        <hr />
+        <p class="text-center">
+          Cette section vous permet de gérer votre visibilité, vos données
+          personnelles et vos préférences. <br />
+          <br />
+          Nous nous engageons à ne jamais partager vos informations sans votre
+          consentement.
+        </p>
       </div>
     </div>
   </div>
