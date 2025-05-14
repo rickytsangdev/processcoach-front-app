@@ -1,1 +1,51 @@
-<h2 class="text-2xl text-white pb-8">- Mes Statistiques -</h2>
+<h2 class="text-2xl text-black pb-8 text-center">- Mes Statistiques -</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+  <!-- Nombre de cours suivis -->
+  <div class="stats shadow bg-white text-gray-800">
+    <div class="stat">
+      <div class="stat-title">Cours suivis</div>
+      <div class="stat-value text-primary">{{ stats.coursesStarted }}</div>
+      <div class="stat-desc">2 nouveaux ce mois-ci</div>
+    </div>
+  </div>
+
+  <!-- Cours complétés -->
+  <div class="stats shadow bg-white text-gray-800">
+    <div class="stat">
+      <div class="stat-title">Cours complétés</div>
+      <div class="stat-value text-success">{{ stats.coursesCompleted }}</div>
+      <div class="stat-desc">Bravo ! Continue 🚀</div>
+    </div>
+  </div>
+
+  <!-- Temps passé -->
+  <div class="stats shadow bg-white text-gray-800">
+    <div class="stat">
+      <div class="stat-title">Temps total</div>
+      <div class="stat-value text-warning">{{ stats.totalTime }}</div>
+      <div class="stat-desc">Sur les 30 derniers jours</div>
+    </div>
+  </div>
+
+  <!-- Attestations -->
+  <div class="stats shadow bg-white text-gray-800">
+    <div class="stat">
+      <div class="stat-title">Attestations</div>
+      <div class="stat-value text-info">{{ stats.certificates }}</div>
+      <div class="stat-desc">Téléchargeables à tout moment</div>
+    </div>
+  </div>
+
+  <!-- Dernier cours suivi -->
+  <div
+    class="stats shadow bg-white text-gray-800 col-span-1 sm:col-span-2 lg:col-span-3"
+  >
+    <div class="stat">
+      <div class="stat-title">Dernier cours suivi</div>
+      <div class="stat-value text-base-content">
+        {{ stats.lastCourse.title }}
+      </div>
+      <div class="stat-desc">Continué {{ stats.lastCourse.lastAccess }}</div>
+    </div>
+  </div>
+</div>
