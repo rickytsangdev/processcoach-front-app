@@ -1,13 +1,14 @@
 .menu_navigation {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(0, 125, 0);
   margin-bottom: 1rem;
 }
 
 .profile-badge {
-  min-width: 0.5rem;  // ou la largeur exacte de ton badge
+  min-width: 0.5rem; // ou la largeur exacte de ton badge
   min-height: 0.5rem; // idem pour la hauteur
   display: inline-block;
   vertical-align: middle;
+  background-color: rgb(0, 255, 0);
 }
 .profile-badge.invisible {
   visibility: hidden;
@@ -16,6 +17,6 @@
   visibility: visible;
 }
 
-.container_section{
+.container_section {
   width: 100%;
 }
