@@ -1,20 +1,28 @@
 import { Routes } from '@angular/router';
+// opening routes
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+// user routes
 import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
-import { AboutComponent } from './pages/about/about.component';
 import { CourseComponent } from './pages/course/course.component';
 import { CertificateComponent } from './pages/user/profile/certificate/certificate.component';
 import { FaqComponent } from './pages/user/faq/faq.component';
+// user children routes
+import { InformationsComponent } from './pages/user/profile/informations/informations.component';
+import { StatsComponent } from './pages/user/profile/stats/stats.component';
+// admin routes
 import { AnalysisComponent } from './pages/admin/analysis/analysis.component';
 import { UserListComponent } from './pages/admin/user-list/user-list.component';
 import { ManagementComponent } from './pages/admin/management/management.component';
-import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { adminGuard } from './guards/admin.guard';
+// firebase auth guard
+import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+// redirection method
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['/']);
 
 export const routes: Routes = [
@@ -37,6 +45,11 @@ export const routes: Routes = [
   {
     path: 'user/profile',
     component: ProfileComponent,
+    children: [
+      { path: '', component: InformationsComponent },
+      { path: 'certificate', component: CertificateComponent },
+      { path: 'stats', component: StatsComponent },
+    ],
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToHome },
   },
