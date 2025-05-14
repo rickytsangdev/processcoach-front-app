@@ -8,7 +8,7 @@ import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CourseComponent } from './pages/course/course.component';
-import { CertificateComponent } from './pages/user/certificate/certificate.component';
+import { CertificateComponent } from './pages/user/profile/certificate/certificate.component';
 import { FaqComponent } from './pages/user/faq/faq.component';
 import { AnalysisComponent } from './pages/admin/analysis/analysis.component';
 import { UserListComponent } from './pages/admin/user-list/user-list.component';
@@ -41,7 +41,7 @@ export const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToHome },
   },
   {
-    path: 'user/certificate',
+    path: 'user/profile/certificate',
     component: CertificateComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToHome },
