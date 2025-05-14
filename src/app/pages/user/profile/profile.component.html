@@ -21,7 +21,7 @@
               />
             </svg>
             Mes informations
-            <span class="badge badge-xs badge-info"></span>
+            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="!(currentUrl === '/user/profile' || currentUrl === '/user/profile/')"></span>
           </a>
         </li>
         <li routerLink="/user/profile/certificate">
@@ -41,7 +41,7 @@
               />
             </svg>
             Mes attestations
-            <span class="badge badge-xs badge-info"></span>
+            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="currentUrl !== '/user/profile/certificate'"></span>
           </a>
         </li>
         <li routerLink="/user/profile/stats">
@@ -61,7 +61,7 @@
               />
             </svg>
             Mes Stats
-            <span class="badge badge-xs badge-info"></span>
+            <span class="badge badge-xs badge-info profile-badge" [class.invisible]="currentUrl !== '/user/profile/stats'"></span>
           </a>
         </li>
       </ul>

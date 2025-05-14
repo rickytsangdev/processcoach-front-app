@@ -3,3 +3,15 @@
   margin-bottom: 1rem;
 }
 
+.profile-badge {
+  min-width: 0.5rem;  // ou la largeur exacte de ton badge
+  min-height: 0.5rem; // idem pour la hauteur
+  display: inline-block;
+  vertical-align: middle;
+}
+.profile-badge.invisible {
+  visibility: hidden;
+}
+.profile-badge.visible {
+  visibility: visible;
+}
