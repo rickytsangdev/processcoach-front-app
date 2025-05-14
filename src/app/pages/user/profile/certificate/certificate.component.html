@@ -1,1 +1,71 @@
-<h2 class="text-2xl text-white pb-8">- Mes Attestations -</h2>
+<h2 class="text-2xl text-black pb-8 text-center">- Mes Attestations -</h2>
+<div class="bloc_attestation flex flex-col gap-5">
+  <div
+    class="flex card bg-[#f2f2f2] w-[80%] m-auto shadow-xl border border-gray-200"
+  >
+    <div class="card-body flex flex-row items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 7V3a1 1 0 011-1h8a1 1 0 011 1v4m0 0v14a1 1 0 01-1 1H8a1 1 0 01-1-1V7h10z"
+            />
+          </svg>
+        </div>
+        <span class="text-base font-semibold">{{ fileName_1 }}</span>
+      </div>
+
+      <a
+        [href]="downloadUrl"
+        [download]="fileName_1"
+        class="btn btn-outline btn-sm btn-primary"
+      >
+        Télécharger
+      </a>
+    </div>
+  </div>
+  <!-- 2eme attestation -->
+  <div
+    class="flex card bg-[#f2f2f2] w-[80%] m-auto shadow-xl border border-gray-200"
+  >
+    <div class="card-body flex flex-row items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 7V3a1 1 0 011-1h8a1 1 0 011 1v4m0 0v14a1 1 0 01-1 1H8a1 1 0 01-1-1V7h10z"
+            />
+          </svg>
+        </div>
+        <span class="text-base font-semibold">{{ fileName_2 }}</span>
+      </div>
+
+      <a
+        [href]="downloadUrl"
+        [download]="fileName_2"
+        class="btn btn-outline btn-sm btn-primary"
+      >
+        Télécharger
+      </a>
+    </div>
+  </div>
+</div>
+<!-- 1er attestation -->
