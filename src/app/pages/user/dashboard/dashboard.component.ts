@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgClass } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgClass],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -38,12 +38,15 @@ export class DashboardComponent implements OnInit {
       buttonText: 'Commencer',
     },
   ];
+
   isAdmin: boolean = false;
+  backgroundClass: string = 'bg-green-gradient';
 
   constructor(private authService: AuthService) {}
 
   async ngOnInit(): Promise<void> {
     this.isAdmin = await this.authService.isAdmin();
+    this.backgroundClass = this.isAdmin ? 'bg-admin' : 'bg-green-gradient';
     console.log('Is Admin : ', this.isAdmin);
   }
 }

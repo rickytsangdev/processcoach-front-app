@@ -1,15 +1,19 @@
 .card {
   transform: scale(0.9); /* Réduction */
-  transform-origin: center; 
+  transform-origin: center;
 }
 
 .card img {
   width: 100%;
-  height: auto; 
+  height: auto;
 }
 
 .container {
   max-width: 100%;
-  overflow: hidden; 
-  box-sizing: border-box; 
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bg-admin {
+  background-color: #db8f33 !important;
 }
