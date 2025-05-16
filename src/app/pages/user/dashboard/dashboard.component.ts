@@ -1,10 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { NgFor, NgClass } from '@angular/common';
+import { RoleBackgroundDirective } from '../../../shared/directives/role-background.directive';
+
+
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgFor, NgClass],
+  imports: [NgFor, RoleBackgroundDirective],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
