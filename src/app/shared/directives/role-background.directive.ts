@@ -14,7 +14,7 @@ export class RoleBackgroundDirective implements OnInit {
 
   async ngOnInit() {
     const isAdmin = await this.authService.isAdmin();
-    const className = isAdmin ? 'bg-admin' : 'bg-green-gradient';
+    const className = isAdmin ? 'bg-[#DB8F33]' : 'bg-green-gradient';
     this.renderer.addClass(this.el.nativeElement, className);
   }
 }

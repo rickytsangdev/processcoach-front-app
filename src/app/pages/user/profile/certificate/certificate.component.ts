@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RoleBackgroundDirective } from '../../../../shared/directives/role-background.directive';
 
 @Component({
   selector: 'app-certificate',
   standalone: true,
-  imports: [],
+  imports: [RoleBackgroundDirective],
   templateUrl: './certificate.component.html',
   styleUrl: './certificate.component.scss',
 })
