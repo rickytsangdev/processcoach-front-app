@@ -18,6 +18,7 @@
       <button [disabled]="!form.valid" (click)="register()" class="btn w-4/5 bg-green-500 hover:bg-green-900 mt-5 text-white">
         Valider mon inscription
       </button>
+      <div>{{form.errors | json}}</div>
     </div>
   </div>
 

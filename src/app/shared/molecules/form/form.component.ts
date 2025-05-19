@@ -10,12 +10,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './form.component.html',
 })
 export class FormComponent {
-  showPassword:boolean = false;
+  showPassword: boolean = false;
 
   connectionBtn = 'Se connecter';
   @Input() formType: 'login' | 'signup' = 'login';
   @Input() formGroup!: FormGroup; // Reçoit le FormGroup du parent
-
 
   // exclu l'utilisation de l'espace dans le champ de texte
   preventSpace(event: KeyboardEvent): void {

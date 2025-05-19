@@ -11,6 +11,8 @@ import { filter } from 'rxjs/operators';
 import { FormComponent } from '../../shared/molecules/form/form.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { Match } from './validators';
+
 
 @Component({
   selector: 'app-signup',
@@ -43,9 +45,17 @@ export class SignupComponent {
         ),
       ],
     ],
+    confirmPassword: [
+      '',
+      [Validators.required]
+    ],
     lastName: ['', [Validators.required, Validators.minLength(3)]],
     firstName: ['', [Validators.required, Validators.minLength(3)]],
-  });
+  }, {
+    validators: [Match],
+  }
+
+);
 
   async register() {
     try {

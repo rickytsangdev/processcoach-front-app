@@ -58,6 +58,8 @@
     </div>
     <!-- condition for email input -->
   </div>
+
+  <!-- password -->
   <div class="w-[70%] m-auto">
     <label
       class="input input-bordered flex items-center gap-2"
@@ -98,7 +100,7 @@
     <div class="max-h-6 h-6">
       <p
         class="text-red-400"
-        *ngIf="formGroup.controls['email'].touched &&  formGroup.controls['email'].dirty && formGroup.controls['password'].errors?.['required']"
+        *ngIf="formGroup.controls['password'].touched &&  formGroup.controls['password'].dirty && formGroup.controls['password'].errors?.['required']"
       >
         Le mot de passe est requis.
       </p>
@@ -118,6 +120,42 @@
 
     <!-- end condition for password input -->
   </div>
+
+  <!-- confirm password -->
+  <ng-container *ngIf="formType === 'signup'">
+    <div class="w-[70%] m-auto">
+      <label
+        class="input input-bordered flex items-center gap-2"
+        [ngClass]="{
+    'border-green-500 border-2': formGroup.controls['confirmPassword'].valid,
+  }"
+      >
+        Confirmation du mot de passe :
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="grow"
+          placeholder="Confirmez votre mot de passe"
+          formControlName="confirmPassword"
+          (keydown)="preventSpace($event)"
+        />
+      </label>
+      <div class="max-h-6 h-6">
+        <p
+          class="text-red-400"
+          *ngIf="formGroup.controls['confirmPassword'].touched && formGroup.controls['confirmPassword'].dirty && formGroup.controls['confirmPassword'].errors?.['required']"
+        >
+          La confirmation du mot de passe est requise.
+        </p>
+        <p
+          class="text-red-400"
+          *ngIf="formGroup.errors?.['notMatching'] && formGroup.controls['confirmPassword'].touched"
+        >
+          Les mots de passe ne correspondent pas.
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
   <ng-container *ngIf="formType === 'signup'">
     <div class="w-[70%] m-auto">
       <label
@@ -153,10 +191,12 @@
       <!-- end condition for LastName input -->
     </div>
     <div class="w-[70%] m-auto">
-      <label class="input input-bordered flex items-center gap-2"
-       [ngClass]="{
+      <label
+        class="input input-bordered flex items-center gap-2"
+        [ngClass]="{
     'border-green-500 border-2': formGroup.controls['firstName'].valid,
-  }">
+  }"
+      >
         Prénom :
         <input
           type="text"
