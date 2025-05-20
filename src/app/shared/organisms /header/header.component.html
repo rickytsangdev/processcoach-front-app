@@ -56,6 +56,9 @@
       <li>
         <a routerLink="/dashboard">Dashboard</a>
       </li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/admin">Admin</a>
+      </li>
       <li>
         <a routerLink="/faq">J'ai une question</a>
       </li>
